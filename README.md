@@ -5,6 +5,9 @@ a fun little project i did using the [darija_open_dataset](https://github.com/da
 - ...
 
 
+### screenshots
+![image info](res/screenshot1.png)
+![image info](res/screenshot2.png)
 
 ## installation
 ### the api
@@ -21,7 +24,7 @@ $ python3 -B main.py
 ```
 
 ### front-end
-run cmd
+run
 ```sh
 $ cd front-end
 $ npm install
