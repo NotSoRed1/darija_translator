@@ -14,12 +14,14 @@ a fun little project i did using the [darija_open_dataset](https://github.com/da
 for windows
 ```sh
 $ cd api
+$ pip install -r requirements.txt
 $ python -B main.py
 ```
 
 for mac and linux
 ```sh
 $ cd api
+$ pip3 install -r requirements.txt
 $ python3 -B main.py
 ```
 
