@@ -3,7 +3,7 @@ A fun little project i did using the [darija_open_dataset](https://github.com/da
 for translating the Moroccan main language (darija) to english 
 
 features:
-- fast auto completion using Trie(prefix tree).
+- fast auto completion using Tries(prefix trees).
 - various categories with more than 10000 words.
 
 
