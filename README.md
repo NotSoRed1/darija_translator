@@ -1,8 +1,10 @@
 # darija_translator
-a fun little project i did using the [darija_open_dataset](https://github.com/darija-open-dataset/dataset)
-- fast auto completion using Trie(prefix tree) with O(n: size of the word) time complexity
+A fun little project i did using the [darija_open_dataset](https://github.com/darija-open-dataset/dataset)
+for translating the Moroccan main language (darija) to english 
+
+features:
+- fast auto completion using Trie(prefix tree).
 - various categories with more than 10000 words.
-- ...
 
 
 ### screenshots
