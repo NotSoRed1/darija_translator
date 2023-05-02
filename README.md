@@ -1,6 +1,6 @@
 # darija_translator
 A fun little project i did using the [darija_open_dataset](https://github.com/darija-open-dataset/dataset)
-for translating the Moroccan main language (darija) to english 
+for translating the Moroccans main language (Darija) to english
 
 features:
 - fast auto completion using Tries(prefix trees).
@@ -13,19 +13,14 @@ features:
 
 ## installation
 ### the api
-for windows
+run
 ```sh
 $ cd api
 $ pip install -r requirements.txt
 $ python -B main.py
 ```
 
-for mac and linux
-```sh
-$ cd api
-$ pip3 install -r requirements.txt
-$ python3 -B main.py
-```
+<br>
 
 ### front-end
 run
@@ -35,6 +30,7 @@ $ npm install
 $ npm run dev
 ```
 
+<br>
 
 ## tech
 - [darija_open_dataset](https://github.com/darija-open-dataset/dataset)

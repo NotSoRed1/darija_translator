@@ -7,8 +7,7 @@ from pathlib import Path
 
 
 def read_all_csv_files(directory: str) -> list:
-    # Can't figure out what to do with those files yet
-    # TODO: figure out how to use these files properly
+
     blacklist = [   
             "(in)definite.csv", "LICENSE", "README.md", 
             "conjug_past.csv", "conjug_present.csv", 
@@ -21,9 +20,10 @@ def read_all_csv_files(directory: str) -> list:
     dataset = []
 
     for file in path.iterdir():
-        # checking if the name of the file is in the blacklist
-        if not str(file).split("/")[1] in blacklist and not file.is_dir():
-            dataset += read_csv_file(str(file))
+
+        if not file.is_dir():
+            if not file.name in blacklist:
+                dataset += read_csv_file(str(file))
 
 
     return dataset
@@ -44,6 +44,7 @@ def read_csv_file(file_path: str):
 
 
 
+
 def generate_prefix_tree(dataset: list):
     prefix_tree = Trie()
 
@@ -52,13 +53,8 @@ def generate_prefix_tree(dataset: list):
         length = len(words)
         for index ,word in enumerate(words.values()):
 
-            """
-            making sure to not add the english translations and empty words 
-            to the prefix tree
-            """
             if not index == (length - 1) and not word == "":
-                prefix_tree.insert(word, i) # <i> is the index of the word in the list
-                                            # used for getting information about the word later
+                prefix_tree.insert(word, i) 
 
 
     return prefix_tree

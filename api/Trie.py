@@ -1,7 +1,8 @@
 class Node:
     character: str
     childrens: dict 
-    index: int | None   # used for getting the information about the word
+    index: int # the index of the word in the dataset
+               # used to get information about the word
     leaf: bool
 
 
@@ -43,13 +44,6 @@ class Trie:
 
         curr.leaf = True
 
-    # def delete(self, word: str):
-    #     curr = self.root
-    #     for c in word:
-    #         if not curr.has_child(c):
-    #             return None
-    #
-    #         curr = curr.childrens[c]
 
 
 
@@ -81,16 +75,15 @@ class Trie:
 
 
 
-    def _complete_prefix_recursive(self, prefix, node: Node) -> list:
-        words: list = []
+    def _complete_prefix_recursive(self, words: list, prefix, node: Node) -> list:
         if node == None:
             return words
 
         if node.leaf:
             words.append((prefix + node.character, node.index))
-            # print(prefix + node.character)
+
         for c in node.childrens.values():
-            words += self._complete_prefix_recursive(prefix + node.character, c)
+            self._complete_prefix_recursive(words, prefix + node.character, c)
 
         return words
 
@@ -103,8 +96,8 @@ class Trie:
                 return []
 
             curr = curr.childrens[c]
-
-        words = self._complete_prefix_recursive(prefix[:-1], curr)
+        words = []
+        self._complete_prefix_recursive(words, prefix[:-1], curr)
 
         return words
 

@@ -33,14 +33,12 @@ async def home():
 @app.get("/words/{id}")
 async def get_word(id: int):
     words: list = []
-    eng_translation: str = ""
+    eng_translation: str = darija_dataset[id]["eng"]
 
-    for i in darija_dataset[id].keys():
-        if i == "eng":
-            eng_translation = darija_dataset[id][i]
-        else:
-            if not darija_dataset[id][i] == "":
-                words.append(darija_dataset[id][i])
+    for key in darija_dataset[id].keys():
+        if key != "eng":
+            if not darija_dataset[id][key] == "":
+                words.append(darija_dataset[id][key])
 
     return {"similar_words": words, "translation": eng_translation }
 
